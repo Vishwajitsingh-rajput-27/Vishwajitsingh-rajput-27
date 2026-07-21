@@ -1,0 +1,15 @@
+{
+  "automaticUpdates": {
+    "enabled": true,
+    "mode": "direct-commit"
+  },
+  "snake": {
+    "enabled": true
+  },
+  "metrics": {
+    "enabled": true
+  },
+  "contribution3d": {
+    "enabled": true
+  }
+}

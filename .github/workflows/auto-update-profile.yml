@@ -1,0 +1,82 @@
+name: Auto Update Profile
+
+on:
+  schedule:
+    - cron: "15 2 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "config/**"
+      - "scripts/**"
+      - "templates/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/auto-update-profile.yml"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auto-update-profile-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update-profile:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run validations
+        run: npm run validate
+
+      - name: Refresh profile data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run update:profile
+
+      - name: Detect repository changes
+        id: changes
+        run: |
+          if git diff --quiet -- README.md data/ config/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Resolve update mode
+        id: mode
+        run: echo "mode=$(node -e "console.log(require('./config/integrations.json').automaticUpdates.mode)")" >> "$GITHUB_OUTPUT"
+
+      - name: Commit directly to main
+        if: steps.changes.outputs.changed == 'true' && steps.mode.outputs.mode == 'direct-commit'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(profile): auto-update generated profile artifacts"
+          file_pattern: README.md data/*.json
+
+      - name: Create pull request for updates
+        if: steps.changes.outputs.changed == 'true' && steps.mode.outputs.mode == 'pull-request'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(profile): auto-update generated profile artifacts"
+          title: "chore(profile): automated profile refresh"
+          body: "Automated profile refresh for README and generated data artifacts."
+          branch: "automation/profile-refresh"
+          base: "main"

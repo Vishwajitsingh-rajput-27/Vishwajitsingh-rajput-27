@@ -1,0 +1,19 @@
+{
+  "name": "Cyber Neon Professional",
+  "palette": {
+    "primaryCyan": "#22D3EE",
+    "secondaryBlue": "#3B82F6",
+    "supportingViolet": "#8B5CF6",
+    "darkBackground": "#070B14",
+    "primaryText": "#E5E7EB",
+    "mutedText": "#94A3B8"
+  },
+  "designInfluences": [
+    "Modern developer portfolio",
+    "shadcn/ui-inspired cleanliness",
+    "Subtle glassmorphism",
+    "Restrained aurora gradients",
+    "Professional terminal styling",
+    "Clean analytics dashboard"
+  ]
+}

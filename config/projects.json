@@ -1,0 +1,7 @@
+{
+  "autoDiscovery": true,
+  "maximumFeaturedProjects": 4,
+  "excludedRepositories": [],
+  "pinnedRepositories": [],
+  "manualProjects": []
+}

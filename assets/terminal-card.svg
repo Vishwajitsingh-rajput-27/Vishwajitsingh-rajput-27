@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">Terminal identity card</title>
+  <desc id="desc">Terminal styled professional identity summary card.</desc>
+  <defs>
+    <linearGradient id="tb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1020"/>
+      <stop offset="100%" stop-color="#111B34"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="url(#tb)"/>
+  <rect x="1" y="1" width="1198" height="338" rx="19" fill="none" stroke="#223152"/>
+  <rect x="0" y="0" width="1200" height="48" rx="20" fill="#0A1223"/>
+  <circle cx="28" cy="24" r="6" fill="#EF4444"/>
+  <circle cx="50" cy="24" r="6" fill="#F59E0B"/>
+  <circle cx="72" cy="24" r="6" fill="#10B981"/>
+  <text x="98" y="30" fill="#94A3B8" font-family="Consolas, Menlo, monospace" font-size="18">developer@github:~$ whoami</text>
+  <g fill="#E5E7EB" font-family="Consolas, Menlo, monospace" font-size="22">
+    <text x="44" y="98">Name       : Vishwajitsingh Rajput</text>
+    <text x="44" y="136">Role       : Computer Engineering Student</text>
+    <text x="44" y="174">Focus      : Full-Stack Development and Applied AI</text>
+    <text x="44" y="212">Location   : Pune, Maharashtra, India</text>
+    <text x="44" y="250">Learning   : DSA, AI, Computer Vision and Geospatial Systems</text>
+    <text x="44" y="288">Status     : Building useful and ambitious products</text>
+  </g>
+</svg>
