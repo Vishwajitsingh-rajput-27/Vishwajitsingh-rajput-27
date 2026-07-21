@@ -1,0 +1,660 @@
+{
+  "lastMeaningfulRefresh": "2026-07-21",
+  "lastRunAt": "2026-07-21T15:52:25.308Z",
+  "meaningfulChanges": false,
+  "summary": [
+    "No meaningful profile changes detected."
+  ],
+  "fingerprint": "070ea1814feecbab08cee6c94e4b254fec34a308c625c2d8ad7773892cf860ee",
+  "state": {
+    "profile": {
+      "username": "Vishwajitsingh-rajput-27",
+      "fullName": "Vishwajitsingh Dilipsingh Rajput",
+      "displayName": "Vishwajitsingh Rajput",
+      "headline": "Computer Engineering Student | Full-Stack Developer | AI & Geospatial Builder",
+      "tagline": "Building intelligent systems, practical developer tools, and ambitious AI-powered products.",
+      "location": "Pune, Maharashtra, India",
+      "education": {
+        "degree": "B.Tech in Computer Engineering",
+        "institution": "Indira College of Engineering and Management, Pune",
+        "affiliation": "Savitribai Phule Pune University",
+        "year": "Second-year engineering student"
+      },
+      "about": [
+        "I am a second-year Computer Engineering student at Indira College of Engineering and Management, affiliated with Savitribai Phule Pune University. My current focus includes full-stack development, applied artificial intelligence, computer vision, automation, and geospatial technology.",
+        "I enjoy converting complex ideas into structured and practical products with strong interfaces, reliable workflows, and clear documentation. Alongside project development, I am strengthening my problem-solving skills through Data Structures and Algorithms using Striver’s roadmap."
+      ],
+      "animatedRoles": [
+        "Full-Stack Developer",
+        "AI & Geospatial Builder",
+        "Computer Engineering Student"
+      ],
+      "currentProjects": [
+        "NoteNexus AI",
+        "ResumeAI",
+        "Generative AI Cloud Removal for Satellite Imagery",
+        "Full-stack, AI, automation, and hackathon projects"
+      ],
+      "learningFocus": [
+        "Data Structures and Algorithms using Striver’s roadmap",
+        "Advanced React and Next.js",
+        "Backend engineering",
+        "Artificial intelligence and machine learning",
+        "Computer vision",
+        "Generative AI",
+        "Geospatial and satellite-image processing",
+        "GitHub Actions",
+        "Open-source development"
+      ],
+      "collaborationInterests": [
+        "Open-source projects",
+        "Hackathons",
+        "Full-stack applications",
+        "AI-powered tools",
+        "Education technology",
+        "Computer vision",
+        "Geospatial AI",
+        "Research-oriented student projects"
+      ],
+      "askMeAbout": [
+        "Full-stack web development",
+        "Applied AI product ideas",
+        "Computer vision prototypes",
+        "Geospatial workflows",
+        "Student hackathon projects",
+        "GitHub Actions automation"
+      ],
+      "developmentGoal": "Build reliable, useful products while developing strong engineering fundamentals, clear documentation habits, and open-source collaboration skills.",
+      "publicLinks": {
+        "github": "https://github.com/Vishwajitsingh-rajput-27",
+        "linkedin": "",
+        "portfolio": "",
+        "resume": "",
+        "email": "",
+        "leetcode": "",
+        "codeforces": "",
+        "devto": "",
+        "hashnode": "",
+        "medium": "",
+        "stackoverflow": "",
+        "twitter": ""
+      },
+      "themePreference": "cyber-neon-professional",
+      "showFollowerCounts": false
+    },
+    "approvedSkills": [
+      {
+        "name": "Axios",
+        "category": "frontend",
+        "priority": 29,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "C",
+        "category": "primaryLanguages",
+        "priority": 20,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "C++",
+        "category": "primaryLanguages",
+        "priority": 1,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Computer Vision",
+        "category": "aiComputerVision",
+        "priority": 39,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "CSS",
+        "category": "primaryLanguages",
+        "priority": 22,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Digital Elevation Models",
+        "category": "geospatial",
+        "priority": 44,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Express.js",
+        "category": "backend",
+        "priority": 8,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Firebase Authentication",
+        "category": "data",
+        "priority": 34,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Framer Motion",
+        "category": "frontend",
+        "priority": 24,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Generative AI",
+        "category": "aiComputerVision",
+        "priority": 14,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Git",
+        "category": "tools",
+        "priority": 11,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "GitHub",
+        "category": "tools",
+        "priority": 12,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "GitHub Actions",
+        "category": "tools",
+        "priority": 47,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Google Colab",
+        "category": "deployment",
+        "priority": 56,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Google Earth Engine",
+        "category": "geospatial",
+        "priority": 15,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Google Gemini",
+        "category": "aiComputerVision",
+        "priority": 36,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Groq",
+        "category": "aiComputerVision",
+        "priority": 37,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "HTML",
+        "category": "primaryLanguages",
+        "priority": 21,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "JavaScript",
+        "category": "primaryLanguages",
+        "priority": 3,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Kaggle",
+        "category": "deployment",
+        "priority": 57,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "MongoDB",
+        "category": "data",
+        "priority": 9,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "MongoDB Atlas",
+        "category": "data",
+        "priority": 33,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Multimodal AI",
+        "category": "aiComputerVision",
+        "priority": 40,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Next.js",
+        "category": "frontend",
+        "priority": 6,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Node.js",
+        "category": "backend",
+        "priority": 7,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "npm",
+        "category": "tools",
+        "priority": 52,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Ollama",
+        "category": "aiComputerVision",
+        "priority": 38,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "OpenAI APIs",
+        "category": "aiComputerVision",
+        "priority": 35,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "OpenCV",
+        "category": "aiComputerVision",
+        "priority": 13,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Playwright",
+        "category": "tools",
+        "priority": 51,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Postman",
+        "category": "tools",
+        "priority": 53,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Prompt Engineering",
+        "category": "aiComputerVision",
+        "priority": 41,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Python",
+        "category": "primaryLanguages",
+        "priority": 2,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "React",
+        "category": "frontend",
+        "priority": 5,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "React Hook Form",
+        "category": "frontend",
+        "priority": 26,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Recharts",
+        "category": "frontend",
+        "priority": 30,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Remote-sensing workflows",
+        "category": "geospatial",
+        "priority": 46,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Render",
+        "category": "deployment",
+        "priority": 55,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "REST APIs",
+        "category": "backend",
+        "priority": 31,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Satellite imagery processing",
+        "category": "geospatial",
+        "priority": 45,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Sentinel-1",
+        "category": "geospatial",
+        "priority": 42,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Sentinel-2",
+        "category": "geospatial",
+        "priority": 43,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "shadcn/ui",
+        "category": "frontend",
+        "priority": 23,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Socket.IO",
+        "category": "backend",
+        "priority": 32,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "frontend",
+        "priority": 10,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "TanStack Query",
+        "category": "frontend",
+        "priority": 28,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Termux",
+        "category": "tools",
+        "priority": 49,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "TypeScript",
+        "category": "primaryLanguages",
+        "priority": 4,
+        "visible": true,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Ubuntu",
+        "category": "tools",
+        "priority": 50,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Vercel",
+        "category": "deployment",
+        "priority": 54,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Visual Studio Code",
+        "category": "tools",
+        "priority": 48,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Zod",
+        "category": "frontend",
+        "priority": 27,
+        "visible": false,
+        "verificationStatus": "approved"
+      },
+      {
+        "name": "Zustand",
+        "category": "frontend",
+        "priority": 25,
+        "visible": false,
+        "verificationStatus": "approved"
+      }
+    ],
+    "suggestedSkills": [],
+    "projectsConfig": {
+      "autoDiscovery": true,
+      "maximumFeaturedProjects": 4,
+      "excludedRepositories": [],
+      "pinnedRepositories": [],
+      "manualProjects": []
+    },
+    "integrations": {
+      "automaticUpdates": {
+        "enabled": true,
+        "mode": "direct-commit"
+      },
+      "snake": {
+        "enabled": true
+      },
+      "metrics": {
+        "enabled": true
+      },
+      "contribution3d": {
+        "enabled": true
+      }
+    },
+    "theme": {
+      "name": "Cyber Neon Professional",
+      "slug": "cyber-neon-professional",
+      "colors": {
+        "primaryCyan": "#22D3EE",
+        "secondaryBlue": "#3B82F6",
+        "supportingViolet": "#8B5CF6",
+        "darkBackground": "#070B14",
+        "primaryText": "#E5E7EB",
+        "mutedText": "#94A3B8",
+        "lightBackground": "#F8FAFC",
+        "lightText": "#0F172A"
+      },
+      "effects": {
+        "glassmorphism": "subtle",
+        "auroraGradient": "restrained",
+        "particleDensity": "low",
+        "animationIntensity": "low",
+        "reducedMotionFriendly": true
+      },
+      "snake": {
+        "lightSnake": "#3B82F6",
+        "darkSnake": "#22D3EE",
+        "lightDots": [
+          "#E2E8F0",
+          "#BAE6FD",
+          "#7DD3FC",
+          "#38BDF8",
+          "#3B82F6"
+        ],
+        "darkDots": [
+          "#111827",
+          "#164E63",
+          "#0E7490",
+          "#0891B2",
+          "#22D3EE"
+        ],
+        "gifBackground": "#070B14"
+      }
+    },
+    "publicProfile": {
+      "displayName": "Vishwajitsingh Rajput",
+      "bio": "",
+      "location": "",
+      "website": "",
+      "socialAccounts": []
+    },
+    "repositories": [
+      {
+        "id": 1200951596,
+        "name": "notenexus",
+        "url": "https://github.com/Vishwajitsingh-rajput-27/notenexus",
+        "description": "An AI-powered study and knowledge platform that organizes academic content and generates practical learning resources.",
+        "homepage": "https://notenexus-azure.vercel.app/",
+        "languages": [
+          "JavaScript",
+          "TypeScript"
+        ],
+        "stars": 0,
+        "forks": 0,
+        "archived": false,
+        "topics": [
+          "ai",
+          "education",
+          "full-stack",
+          "nextjs"
+        ],
+        "score": 91
+      },
+      {
+        "id": 1252991422,
+        "name": "Resume_Forge",
+        "url": "https://github.com/Vishwajitsingh-rajput-27/Resume_Forge",
+        "description": "A full-stack career toolkit for ATS-friendly resumes, application tailoring, interview preparation, and portfolio publishing.",
+        "homepage": "https://resume-forge-six-gamma.vercel.app/",
+        "languages": [
+          "JavaScript",
+          "TypeScript"
+        ],
+        "stars": 0,
+        "forks": 0,
+        "archived": false,
+        "topics": [
+          "career",
+          "full-stack",
+          "nextjs",
+          "resume"
+        ],
+        "score": 87
+      },
+      {
+        "id": 1271072134,
+        "name": "clearSKY_AI",
+        "url": "https://github.com/Vishwajitsingh-rajput-27/clearSKY_AI",
+        "description": "A research-oriented platform for generative AI cloud removal and reconstruction workflows for satellite imagery.",
+        "homepage": "",
+        "languages": [
+          "Python",
+          "TypeScript"
+        ],
+        "stars": 0,
+        "forks": 0,
+        "archived": false,
+        "topics": [
+          "computer-vision",
+          "generative-ai",
+          "geospatial",
+          "satellite-imagery"
+        ],
+        "score": 90
+      },
+      {
+        "id": 1281688133,
+        "name": "route-resilience-ai",
+        "url": "https://github.com/Vishwajitsingh-rajput-27/route-resilience-ai",
+        "description": "Occlusion-aware road graph intelligence for urban disaster mobility.",
+        "homepage": "",
+        "languages": [
+          "Python",
+          "TypeScript"
+        ],
+        "stars": 0,
+        "forks": 0,
+        "archived": false,
+        "topics": [
+          "computer-vision",
+          "disaster-management",
+          "geospatial",
+          "graph-analysis"
+        ],
+        "score": 88
+      },
+      {
+        "id": 1293360453,
+        "name": "MuseTrace-AI",
+        "url": "https://github.com/Vishwajitsingh-rajput-27/MuseTrace-AI",
+        "description": "An Android drawing-assistance app that converts source images into layered sketch plans with user-controlled drawing guidance.",
+        "homepage": "",
+        "languages": [
+          "Kotlin"
+        ],
+        "stars": 0,
+        "forks": 0,
+        "archived": false,
+        "topics": [
+          "android",
+          "computer-vision",
+          "gemini",
+          "kotlin"
+        ],
+        "score": 82
+      }
+    ],
+    "featured": [
+      "notenexus",
+      "clearSKY_AI",
+      "route-resilience-ai",
+      "Resume_Forge"
+    ],
+    "languages": [
+      {
+        "name": "JavaScript",
+        "displayPercentage": 22.22
+      },
+      {
+        "name": "Kotlin",
+        "displayPercentage": 11.11
+      },
+      {
+        "name": "Python",
+        "displayPercentage": 22.22
+      },
+      {
+        "name": "TypeScript",
+        "displayPercentage": 44.44
+      }
+    ]
+  },
+  "errors": []
+}

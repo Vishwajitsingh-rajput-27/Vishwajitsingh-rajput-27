@@ -1,0 +1,105 @@
+name: Generate Contribution Snake
+
+on:
+  schedule:
+    - cron: "13 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/snake.yml"
+      - "config/theme.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contribution-snake-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate contribution snake assets
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Generate light, dark, and GIF assets
+        uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: Vishwajitsingh-rajput-27
+          github_token: ${{ github.token }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg?color_snake=#3B82F6&color_dots=#E2E8F0,#BAE6FD,#7DD3FC,#38BDF8,#3B82F6
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#22D3EE&color_dots=#111827,#1E3A5F,#1D4ED8,#6D28D9,#8B5CF6
+            dist/github-contribution-grid-snake.gif?color_snake=#3B82F6&color_dots=#E2E8F0,#BAE6FD,#7DD3FC,#38BDF8,#3B82F6
+
+      - name: Verify generated output
+        run: |
+          test -s dist/github-contribution-grid-snake.svg
+          test -s dist/github-contribution-grid-snake-dark.svg
+          test -s dist/github-contribution-grid-snake.gif
+
+      - name: Upload validated snake release payload
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: contribution-snake
+          path: dist/
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish contribution snake to output branch
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository history
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Download validated snake release payload
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: contribution-snake
+          path: dist
+
+      - name: Publish changed assets without force-pushing
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s dist/github-contribution-grid-snake.svg
+          test -s dist/github-contribution-grid-snake-dark.svg
+          test -s dist/github-contribution-grid-snake.gif
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code --heads origin output >/dev/null 2>&1; then
+            git fetch origin output:refs/remotes/origin/output
+            git worktree add -b output publish refs/remotes/origin/output
+          else
+            git worktree add --detach publish HEAD
+            git -C publish checkout --orphan output
+            git -C publish rm -rf .
+          fi
+
+          git -C publish clean -fdx
+          cp dist/github-contribution-grid-snake.svg publish/
+          cp dist/github-contribution-grid-snake-dark.svg publish/
+          cp dist/github-contribution-grid-snake.gif publish/
+          touch publish/.nojekyll
+
+          git -C publish add -A
+          if git -C publish diff --cached --quiet; then
+            echo "Snake output is unchanged; no commit is required."
+            exit 0
+          fi
+
+          git -C publish commit -m "chore(snake): refresh contribution animation"
+          git -C publish push origin output

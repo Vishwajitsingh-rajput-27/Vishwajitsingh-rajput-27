@@ -1,0 +1,33 @@
+{
+  "name": "vishwajitsingh-rajput-27-profile",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Production-ready GitHub Profile README generator and automation for Vishwajitsingh-rajput-27.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "fetch-profile": "node scripts/fetch-github-profile.js",
+    "discover": "node scripts/discover-projects.js",
+    "languages": "node scripts/calculate-language-summary.js",
+    "generate": "node scripts/generate-readme.js",
+    "detect-changes": "node scripts/detect-changes.js",
+    "validate": "node scripts/validate-config.js && node scripts/scan-secrets.js",
+    "check-links": "node scripts/validate-links.js",
+    "validate-workflows": "node scripts/validate-workflows.js",
+    "validate-svg": "node scripts/validate-svg.js",
+    "test-protected-content": "node scripts/test-protected-content.js",
+    "test-change-detection": "node scripts/test-change-detection.js",
+    "test-resilience": "node scripts/test-failure-resilience.js",
+    "test": "npm run test-protected-content && npm run test-change-detection && npm run test-resilience && npm run scan-secrets",
+    "metrics": "node scripts/generate-metrics.js",
+    "build": "npm run generate && npm run metrics",
+    "update-profile": "npm run fetch-profile && npm run discover && npm run languages && npm run detect-changes && npm run build",
+    "scan-secrets": "node scripts/scan-secrets.js"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.2.5",
+    "yaml": "^2.8.1"
+  }
+}

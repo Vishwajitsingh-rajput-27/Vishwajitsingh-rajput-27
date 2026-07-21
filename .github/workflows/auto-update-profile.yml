@@ -1,0 +1,175 @@
+name: Refresh GitHub Profile
+
+on:
+  schedule:
+    - cron: "37 1 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "config/**"
+      - "templates/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/auto-update-profile.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-refresh-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Refresh verified public profile data
+    if: "${{ github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'chore(profile): refresh public GitHub data') }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+    outputs:
+      has_changes: ${{ steps.decision.outputs.has_changes }}
+      mode: ${{ steps.decision.outputs.mode }}
+      branch: ${{ steps.pr_branch.outputs.branch }}
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Fetch verified public GitHub profile
+        run: npm run fetch-profile
+
+      - name: Discover eligible public repositories
+        run: npm run discover
+
+      - name: Recalculate public repository language summary
+        run: npm run languages
+
+      - name: Detect meaningful changes
+        run: npm run detect-changes
+
+      - name: Generate candidate README
+        run: npm run generate
+
+      - name: Final validation gate before any commit
+        run: |
+          npm run validate
+          npm run check-links
+          npm run validate-workflows
+          npm run validate-svg
+          npm run scan-secrets
+          npm run build
+          npm run test-protected-content
+          npm run test-change-detection
+          npm run test-resilience
+          npm run validate
+          npm run validate-svg
+
+      - name: Write workflow review summary
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const status = JSON.parse(fs.readFileSync('data/update-status.json', 'utf8'));
+          const skills = JSON.parse(fs.readFileSync('config/skills.json', 'utf8'));
+          const repositories = JSON.parse(fs.readFileSync('data/repositories.json', 'utf8'));
+          const lines = [
+            '# Profile refresh review',
+            '',
+            `- Meaningful change detected: **${Boolean(status.meaningfulChanges)}**`,
+            `- Featured repositories: **${(repositories.featured ?? []).length}**`,
+            `- Suggested skills awaiting approval: **${(skills.suggestedSkills ?? []).length}**`,
+            '',
+            'Only approved skills are rendered publicly. Suggested skills remain review-only.'
+          ];
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${lines.join('\n')}\n`);
+          NODE
+
+      - name: Determine update mode and commit eligibility
+        id: decision
+        shell: bash
+        run: |
+          set -euo pipefail
+          MODE="$(node -p "JSON.parse(require('fs').readFileSync('config/integrations.json','utf8')).automaticUpdates.mode")"
+          ENABLED="$(node -p "JSON.parse(require('fs').readFileSync('config/integrations.json','utf8')).automaticUpdates.enabled")"
+          MEANINGFUL="$(node -p "Boolean(JSON.parse(require('fs').readFileSync('data/update-status.json','utf8')).meaningfulChanges)")"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "enabled=$ENABLED" >> "$GITHUB_OUTPUT"
+          echo "meaningful=$MEANINGFUL" >> "$GITHUB_OUTPUT"
+
+          if [[ "$ENABLED" != "true" || "$MEANINGFUL" != "true" ]]; then
+            git restore --worktree --staged .
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure automated commit identity
+        if: steps.decision.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push direct update
+        if: steps.decision.outputs.has_changes == 'true' && steps.decision.outputs.mode == 'direct-commit'
+        run: |
+          set -euo pipefail
+          git add README.md assets/generated data config/skills.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(profile): refresh public GitHub data"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Create pull-request update branch
+        if: steps.decision.outputs.has_changes == 'true' && steps.decision.outputs.mode == 'pull-request'
+        id: pr_branch
+        run: |
+          set -euo pipefail
+          BRANCH="automation/profile-refresh-${GITHUB_RUN_ID}"
+          git switch -c "$BRANCH"
+          git add README.md assets/generated data config/skills.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(profile): refresh public GitHub data"
+          git push --set-upstream origin "$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+  open-pull-request:
+    name: Open validated profile refresh pull request
+    needs: refresh
+    if: needs.refresh.outputs.has_changes == 'true' && needs.refresh.outputs.mode == 'pull-request' && needs.refresh.outputs.branch != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Open profile refresh pull request
+        run: |
+          gh pr create \
+            --repo "${{ github.repository }}" \
+            --base main \
+            --head "${{ needs.refresh.outputs.branch }}" \
+            --title "chore(profile): refresh public GitHub data" \
+            --body "Automated refresh of verified public GitHub profile data. All generated content passed the repository validation suite."

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 330" role="img" aria-labelledby="title desc">
+  <title id="title">3D contribution calendar light fallback</title><desc id="desc">A neutral light-mode contribution calendar illustration that is replaced by the scheduled GitHub workflow.</desc>
+  <rect width="1100" height="330" rx="22" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="46" y="56" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">3D Contribution Calendar</text>
+  <text x="46" y="86" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="15">Automatically refreshed from public GitHub activity.</text>
+  <g transform="translate(72 135) skewX(-28) scale(1 .72)" fill="#DBEAFE" stroke="#93C5FD">
+    <rect x="0" y="0" width="52" height="52"/><rect x="66" y="0" width="52" height="52" fill="#BAE6FD"/><rect x="132" y="0" width="52" height="52" fill="#7DD3FC"/>
+    <rect x="198" y="0" width="52" height="52"/><rect x="264" y="0" width="52" height="52" fill="#93C5FD"/><rect x="330" y="0" width="52" height="52" fill="#3B82F6"/>
+    <rect x="396" y="0" width="52" height="52" fill="#C4B5FD"/><rect x="462" y="0" width="52" height="52"/><rect x="528" y="0" width="52" height="52" fill="#7DD3FC"/>
+    <rect x="594" y="0" width="52" height="52" fill="#BAE6FD"/><rect x="660" y="0" width="52" height="52"/><rect x="726" y="0" width="52" height="52" fill="#8B5CF6"/>
+    <rect x="792" y="0" width="52" height="52" fill="#93C5FD"/><rect x="858" y="0" width="52" height="52"/>
+  </g>
+</svg>

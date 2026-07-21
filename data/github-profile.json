@@ -1,0 +1,141 @@
+{
+  "username": "Vishwajitsingh-rajput-27",
+  "publicDisplayName": "Vishwajitsingh Rajput",
+  "publicBio": "",
+  "publicLocation": "",
+  "publicWebsite": "",
+  "socialAccounts": [],
+  "publicRepositoryCount": 8,
+  "followers": null,
+  "following": null,
+  "accountCreatedAt": "",
+  "repositories": [
+    {
+      "id": 1200951596,
+      "name": "notenexus",
+      "fullName": "Vishwajitsingh-rajput-27/notenexus",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/notenexus",
+      "description": "An AI-powered study and knowledge platform that organizes academic content and generates practical learning resources.",
+      "homepage": "https://notenexus-azure.vercel.app",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "size": 1682,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "education",
+        "ai",
+        "nextjs",
+        "full-stack"
+      ],
+      "language": "TypeScript",
+      "updatedAt": "2026-07-20T05:07:22Z",
+      "pushedAt": "2026-07-20T05:07:22Z"
+    },
+    {
+      "id": 1271072134,
+      "name": "clearSKY_AI",
+      "fullName": "Vishwajitsingh-rajput-27/clearSKY_AI",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/clearSKY_AI",
+      "description": "A research-oriented platform for generative AI cloud removal and reconstruction workflows for satellite imagery.",
+      "homepage": "",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "size": 289,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "geospatial",
+        "computer-vision",
+        "generative-ai",
+        "satellite-imagery"
+      ],
+      "language": "Python",
+      "updatedAt": "",
+      "pushedAt": ""
+    },
+    {
+      "id": 1281688133,
+      "name": "route-resilience-ai",
+      "fullName": "Vishwajitsingh-rajput-27/route-resilience-ai",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/route-resilience-ai",
+      "description": "Occlusion-aware road graph intelligence for urban disaster mobility.",
+      "homepage": "",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "size": 260,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "geospatial",
+        "graph-analysis",
+        "computer-vision",
+        "disaster-management"
+      ],
+      "language": "Python",
+      "updatedAt": "2026-06-27T13:26:07Z",
+      "pushedAt": "2026-06-27T13:26:07Z"
+    },
+    {
+      "id": 1252991422,
+      "name": "Resume_Forge",
+      "fullName": "Vishwajitsingh-rajput-27/Resume_Forge",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/Resume_Forge",
+      "description": "A full-stack career toolkit for ATS-friendly resumes, application tailoring, interview preparation, and portfolio publishing.",
+      "homepage": "https://resume-forge-six-gamma.vercel.app/",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "size": 3354,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "resume",
+        "career",
+        "nextjs",
+        "full-stack"
+      ],
+      "language": "TypeScript",
+      "updatedAt": "2026-07-19T05:38:39Z",
+      "pushedAt": "2026-07-19T05:38:39Z"
+    },
+    {
+      "id": 1293360453,
+      "name": "MuseTrace-AI",
+      "fullName": "Vishwajitsingh-rajput-27/MuseTrace-AI",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/MuseTrace-AI",
+      "description": "An Android drawing-assistance app that converts source images into layered sketch plans with user-controlled drawing guidance.",
+      "homepage": "",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "size": 211,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "android",
+        "kotlin",
+        "computer-vision",
+        "gemini"
+      ],
+      "language": "Kotlin",
+      "updatedAt": "2026-07-16T12:16:47Z",
+      "pushedAt": "2026-07-16T12:16:47Z"
+    }
+  ],
+  "cache": {
+    "status": "cached-after-fetch-failure",
+    "stale": true,
+    "source": "connected-github-public-data",
+    "lastSuccessfulFetch": "2026-07-21T00:00:00.000Z",
+    "lastAttempt": "2026-07-21T15:52:18.016Z"
+  }
+}

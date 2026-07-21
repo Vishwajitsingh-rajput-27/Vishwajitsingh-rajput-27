@@ -1,0 +1,75 @@
+{
+  "username": "Vishwajitsingh-rajput-27",
+  "fullName": "Vishwajitsingh Dilipsingh Rajput",
+  "displayName": "Vishwajitsingh Rajput",
+  "headline": "Computer Engineering Student | Full-Stack Developer | AI & Geospatial Builder",
+  "tagline": "Building intelligent systems, practical developer tools, and ambitious AI-powered products.",
+  "location": "Pune, Maharashtra, India",
+  "education": {
+    "degree": "B.Tech in Computer Engineering",
+    "institution": "Indira College of Engineering and Management, Pune",
+    "affiliation": "Savitribai Phule Pune University",
+    "year": "Second-year engineering student"
+  },
+  "about": [
+    "I am a second-year Computer Engineering student at Indira College of Engineering and Management, affiliated with Savitribai Phule Pune University. My current focus includes full-stack development, applied artificial intelligence, computer vision, automation, and geospatial technology.",
+    "I enjoy converting complex ideas into structured and practical products with strong interfaces, reliable workflows, and clear documentation. Alongside project development, I am strengthening my problem-solving skills through Data Structures and Algorithms using Striver’s roadmap."
+  ],
+  "animatedRoles": [
+    "Full-Stack Developer",
+    "AI & Geospatial Builder",
+    "Computer Engineering Student"
+  ],
+  "currentProjects": [
+    "NoteNexus AI",
+    "ResumeAI",
+    "Generative AI Cloud Removal for Satellite Imagery",
+    "Full-stack, AI, automation, and hackathon projects"
+  ],
+  "learningFocus": [
+    "Data Structures and Algorithms using Striver’s roadmap",
+    "Advanced React and Next.js",
+    "Backend engineering",
+    "Artificial intelligence and machine learning",
+    "Computer vision",
+    "Generative AI",
+    "Geospatial and satellite-image processing",
+    "GitHub Actions",
+    "Open-source development"
+  ],
+  "collaborationInterests": [
+    "Open-source projects",
+    "Hackathons",
+    "Full-stack applications",
+    "AI-powered tools",
+    "Education technology",
+    "Computer vision",
+    "Geospatial AI",
+    "Research-oriented student projects"
+  ],
+  "askMeAbout": [
+    "Full-stack web development",
+    "Applied AI product ideas",
+    "Computer vision prototypes",
+    "Geospatial workflows",
+    "Student hackathon projects",
+    "GitHub Actions automation"
+  ],
+  "developmentGoal": "Build reliable, useful products while developing strong engineering fundamentals, clear documentation habits, and open-source collaboration skills.",
+  "publicLinks": {
+    "github": "https://github.com/Vishwajitsingh-rajput-27",
+    "linkedin": "",
+    "portfolio": "",
+    "resume": "",
+    "email": "",
+    "leetcode": "",
+    "codeforces": "",
+    "devto": "",
+    "hashnode": "",
+    "medium": "",
+    "stackoverflow": "",
+    "twitter": ""
+  },
+  "themePreference": "cyber-neon-professional",
+  "showFollowerCounts": false
+}

@@ -1,0 +1,235 @@
+{
+  "username": "Vishwajitsingh-rajput-27",
+  "source": "verified-public-github-cache",
+  "fetchedAt": "2026-07-21T00:00:00.000Z",
+  "stale": true,
+  "repositories": [
+    {
+      "id": 1271072134,
+      "name": "clearSKY_AI",
+      "fullName": "Vishwajitsingh-rajput-27/clearSKY_AI",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/clearSKY_AI",
+      "description": "A research-oriented platform for generative AI cloud removal and reconstruction workflows for satellite imagery.",
+      "descriptionSource": "repository-readme",
+      "manualDescriptionLocked": false,
+      "homepage": "",
+      "homepageVerified": false,
+      "homepageVerificationSource": "none",
+      "languages": [
+        "Python",
+        "TypeScript"
+      ],
+      "languageBytes": {},
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "",
+      "pushedAt": "",
+      "archived": false,
+      "fork": false,
+      "size": 289,
+      "topics": [
+        "geospatial",
+        "computer-vision",
+        "generative-ai",
+        "satellite-imagery"
+      ],
+      "license": "",
+      "readmeQuality": "strong",
+      "score": 90,
+      "scoreBreakdown": {
+        "recentActivity": 20,
+        "readmeQuality": 20,
+        "descriptionQuality": 12,
+        "repositoryCompleteness": 12,
+        "originality": 8,
+        "profileRelevance": 16,
+        "topics": 4,
+        "verifiedHomepage": 0,
+        "communitySignal": 0
+      }
+    },
+    {
+      "id": 1293360453,
+      "name": "MuseTrace-AI",
+      "fullName": "Vishwajitsingh-rajput-27/MuseTrace-AI",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/MuseTrace-AI",
+      "description": "An Android drawing-assistance app that converts source images into layered sketch plans with user-controlled drawing guidance.",
+      "descriptionSource": "repository-readme",
+      "manualDescriptionLocked": false,
+      "homepage": "",
+      "homepageVerified": false,
+      "homepageVerificationSource": "none",
+      "languages": [
+        "Kotlin"
+      ],
+      "languageBytes": {},
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-07-16T12:16:47Z",
+      "pushedAt": "2026-07-16T12:16:47Z",
+      "archived": false,
+      "fork": false,
+      "size": 211,
+      "topics": [
+        "android",
+        "kotlin",
+        "computer-vision",
+        "gemini"
+      ],
+      "license": "",
+      "readmeQuality": "strong",
+      "score": 82,
+      "scoreBreakdown": {
+        "recentActivity": 20,
+        "readmeQuality": 20,
+        "descriptionQuality": 12,
+        "repositoryCompleteness": 11,
+        "originality": 8,
+        "profileRelevance": 8,
+        "topics": 4,
+        "verifiedHomepage": 0,
+        "communitySignal": 0
+      }
+    },
+    {
+      "id": 1200951596,
+      "name": "notenexus",
+      "fullName": "Vishwajitsingh-rajput-27/notenexus",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/notenexus",
+      "description": "An AI-powered study and knowledge platform that organizes academic content and generates practical learning resources.",
+      "descriptionSource": "repository-readme",
+      "manualDescriptionLocked": false,
+      "homepage": "https://notenexus-azure.vercel.app",
+      "homepageVerified": true,
+      "homepageVerificationSource": "repository-readme",
+      "languages": [
+        "TypeScript",
+        "JavaScript"
+      ],
+      "languageBytes": {},
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-07-20T05:07:22Z",
+      "pushedAt": "2026-07-20T05:07:22Z",
+      "archived": false,
+      "fork": false,
+      "size": 1682,
+      "topics": [
+        "education",
+        "ai",
+        "nextjs",
+        "full-stack"
+      ],
+      "license": "",
+      "readmeQuality": "strong",
+      "score": 91,
+      "scoreBreakdown": {
+        "recentActivity": 20,
+        "readmeQuality": 20,
+        "descriptionQuality": 12,
+        "repositoryCompleteness": 12,
+        "originality": 8,
+        "profileRelevance": 16,
+        "topics": 4,
+        "verifiedHomepage": 3,
+        "communitySignal": 0
+      }
+    },
+    {
+      "id": 1252991422,
+      "name": "Resume_Forge",
+      "fullName": "Vishwajitsingh-rajput-27/Resume_Forge",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/Resume_Forge",
+      "description": "A full-stack career toolkit for ATS-friendly resumes, application tailoring, interview preparation, and portfolio publishing.",
+      "descriptionSource": "repository-readme",
+      "manualDescriptionLocked": false,
+      "homepage": "https://resume-forge-six-gamma.vercel.app/",
+      "homepageVerified": true,
+      "homepageVerificationSource": "repository-readme",
+      "languages": [
+        "TypeScript",
+        "JavaScript"
+      ],
+      "languageBytes": {},
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-07-19T05:38:39Z",
+      "pushedAt": "2026-07-19T05:38:39Z",
+      "archived": false,
+      "fork": false,
+      "size": 3354,
+      "topics": [
+        "resume",
+        "career",
+        "nextjs",
+        "full-stack"
+      ],
+      "license": "",
+      "readmeQuality": "strong",
+      "score": 87,
+      "scoreBreakdown": {
+        "recentActivity": 20,
+        "readmeQuality": 20,
+        "descriptionQuality": 12,
+        "repositoryCompleteness": 13,
+        "originality": 8,
+        "profileRelevance": 12,
+        "topics": 4,
+        "verifiedHomepage": 3,
+        "communitySignal": 0
+      }
+    },
+    {
+      "id": 1281688133,
+      "name": "route-resilience-ai",
+      "fullName": "Vishwajitsingh-rajput-27/route-resilience-ai",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/route-resilience-ai",
+      "description": "Occlusion-aware road graph intelligence for urban disaster mobility.",
+      "descriptionSource": "repository-readme",
+      "manualDescriptionLocked": false,
+      "homepage": "",
+      "homepageVerified": false,
+      "homepageVerificationSource": "none",
+      "languages": [
+        "Python",
+        "TypeScript"
+      ],
+      "languageBytes": {},
+      "stars": 0,
+      "forks": 0,
+      "updatedAt": "2026-06-27T13:26:07Z",
+      "pushedAt": "2026-06-27T13:26:07Z",
+      "archived": false,
+      "fork": false,
+      "size": 260,
+      "topics": [
+        "geospatial",
+        "graph-analysis",
+        "computer-vision",
+        "disaster-management"
+      ],
+      "license": "",
+      "readmeQuality": "strong",
+      "score": 88,
+      "scoreBreakdown": {
+        "recentActivity": 13,
+        "readmeQuality": 20,
+        "descriptionQuality": 12,
+        "repositoryCompleteness": 12,
+        "originality": 8,
+        "profileRelevance": 16,
+        "topics": 4,
+        "verifiedHomepage": 0,
+        "communitySignal": 0
+      }
+    }
+  ],
+  "featured": [
+    "notenexus",
+    "clearSKY_AI",
+    "route-resilience-ai",
+    "Resume_Forge"
+  ],
+  "selectionPolicy": "Pinned valid repositories first, followed by transparent quality scoring across recency, README quality, description quality, completeness, originality, profile relevance, topics, verified homepages, and a small community signal. Stars are never the sole ranking criterion.",
+  "lastAttempt": "2026-07-21T15:52:24.477Z"
+}

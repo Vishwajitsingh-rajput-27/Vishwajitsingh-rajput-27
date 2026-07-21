@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 360" role="img" aria-labelledby="title desc">
+<title id="title">Public GitHub overview for Vishwajitsingh Rajput</title>
+<desc id="desc">Repository counts, featured project count, focus areas, and public repository language composition.</desc>
+<defs><linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22D3EE"/><stop offset="0.55" stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#070B14"/><stop offset="1" stop-color="#111827"/></linearGradient></defs>
+<rect x="1" y="1" width="1118" height="358" rx="24" fill="url(#bg)" stroke="#334155"/>
+<text x="42" y="55" fill="#E5E7EB" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Public GitHub Overview</text>
+<text x="42" y="83" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="14">Generated from public repository metadata; no private repositories are queried.</text>
+<rect x="42" y="104" width="1036" height="2" rx="1" fill="url(#accent)" opacity="0.72"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="58" y="172" fill="#22D3EE" font-size="44" font-weight="700">8</text><text x="58" y="199" fill="#94A3B8" font-size="15">public repositories</text>
+<text x="270" y="172" fill="#3B82F6" font-size="44" font-weight="700">4</text><text x="270" y="199" fill="#94A3B8" font-size="15">featured repositories</text>
+<text x="58" y="252" fill="#E5E7EB" font-size="18" font-weight="700">Current engineering focus</text>
+<text x="58" y="284" fill="#CBD5E1" font-size="15">Full-stack applications · Applied AI · Computer vision</text>
+<text x="58" y="310" fill="#CBD5E1" font-size="15">Automation · Geospatial and satellite-image workflows</text>
+<text x="640" y="137" fill="#E5E7EB" font-size="18" font-weight="700">Public repository composition</text>
+<text x="640" y="166" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="14">TypeScript</text><rect x="760" y="153" width="310" height="11" rx="5.5" fill="url(#accent)" opacity="1.00"/><text x="1080" y="166" text-anchor="end" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="13">44.4%</text><text x="640" y="197" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="14">JavaScript</text><rect x="760" y="184" width="155" height="11" rx="5.5" fill="url(#accent)" opacity="0.90"/><text x="1080" y="197" text-anchor="end" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="13">22.2%</text><text x="640" y="228" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="14">Python</text><rect x="760" y="215" width="155" height="11" rx="5.5" fill="url(#accent)" opacity="0.80"/><text x="1080" y="228" text-anchor="end" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="13">22.2%</text><text x="640" y="259" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="14">Kotlin</text><rect x="760" y="246" width="78" height="11" rx="5.5" fill="url(#accent)" opacity="0.70"/><text x="1080" y="259" text-anchor="end" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="13">11.1%</text>
+<text x="640" y="332" fill="#64748B" font-size="12">Composition does not represent absolute proficiency.</text>
+</g></svg>

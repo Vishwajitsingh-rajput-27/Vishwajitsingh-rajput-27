@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Vishwajitsingh Rajput — GitHub profile banner</title>
+  <desc id="desc">Professional cyber-neon banner for a Computer Engineering student, full-stack developer, and AI and geospatial builder.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070B14"/>
+      <stop offset="0.55" stop-color="#0B1222"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.52" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <radialGradient id="auroraA" cx="0.15" cy="0.12" r="0.72">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auroraB" cx="0.86" cy="0.75" r="0.68">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#94A3B8" stroke-opacity="0.075" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#auroraA)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#auroraB)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#grid)"/>
+  <path d="M0 310C220 250 360 344 570 292C790 238 958 270 1200 205V360H0Z" fill="#0F172A" fill-opacity="0.58"/>
+  <circle cx="1035" cy="72" r="88" fill="#3B82F6" fill-opacity="0.08" filter="url(#soft)"/>
+  <circle cx="174" cy="306" r="76" fill="#22D3EE" fill-opacity="0.08" filter="url(#soft)"/>
+  <g fill="#E5E7EB" fill-opacity="0.5">
+    <circle cx="80" cy="70" r="2"/><circle cx="170" cy="42" r="1.5"/><circle cx="267" cy="94" r="2"/>
+    <circle cx="930" cy="54" r="1.7"/><circle cx="1092" cy="120" r="2"/><circle cx="1140" cy="54" r="1.4"/>
+  </g>
+  <rect x="62" y="64" width="8" height="218" rx="4" fill="url(#accent)"/>
+  <text x="96" y="145" fill="#E5E7EB" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" letter-spacing="-1.5">Vishwajitsingh Rajput</text>
+  <text x="98" y="202" fill="url(#accent)" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600">Computer Engineering Student | Full-Stack Developer | AI &amp; Geospatial Builder</text>
+  <text x="98" y="250" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="21">Building intelligent systems, practical developer tools, and ambitious AI-powered products.</text>
+  <g transform="translate(98 286)">
+    <rect width="360" height="34" rx="17" fill="#0B1222" stroke="#22D3EE" stroke-opacity="0.32"/>
+    <circle cx="20" cy="17" r="5" fill="#22D3EE"/>
+    <text x="36" y="23" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="15">Pune, Maharashtra, India</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="358" rx="27" fill="none" stroke="url(#accent)" stroke-opacity="0.34" stroke-width="2"/>
+</svg>

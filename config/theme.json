@@ -1,0 +1,28 @@
+{
+  "name": "Cyber Neon Professional",
+  "slug": "cyber-neon-professional",
+  "colors": {
+    "primaryCyan": "#22D3EE",
+    "secondaryBlue": "#3B82F6",
+    "supportingViolet": "#8B5CF6",
+    "darkBackground": "#070B14",
+    "primaryText": "#E5E7EB",
+    "mutedText": "#94A3B8",
+    "lightBackground": "#F8FAFC",
+    "lightText": "#0F172A"
+  },
+  "effects": {
+    "glassmorphism": "subtle",
+    "auroraGradient": "restrained",
+    "particleDensity": "low",
+    "animationIntensity": "low",
+    "reducedMotionFriendly": true
+  },
+  "snake": {
+    "lightSnake": "#3B82F6",
+    "darkSnake": "#22D3EE",
+    "lightDots": ["#E2E8F0", "#BAE6FD", "#7DD3FC", "#38BDF8", "#3B82F6"],
+    "darkDots": ["#111827", "#164E63", "#0E7490", "#0891B2", "#22D3EE"],
+    "gifBackground": "#070B14"
+  }
+}

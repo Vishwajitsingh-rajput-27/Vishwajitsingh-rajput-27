@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420" role="img" aria-labelledby="title desc">
+  <title id="title">Terminal identity card for Vishwajitsingh Rajput</title>
+  <desc id="desc">A professional terminal-style card displaying name, role, focus, location, learning areas, and current status.</desc>
+  <defs>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.65"/><stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.5"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1098" height="418" rx="22" fill="#070B14" stroke="url(#frame)" stroke-width="2"/>
+  <rect x="1" y="1" width="1098" height="52" rx="22" fill="#0F172A"/>
+  <path d="M1 35V22Q1 1 22 1H1078Q1099 1 1099 22V53H1Z" fill="#0F172A"/>
+  <circle cx="28" cy="27" r="7" fill="#F87171"/><circle cx="52" cy="27" r="7" fill="#FBBF24"/><circle cx="76" cy="27" r="7" fill="#34D399"/>
+  <text x="96" y="34" fill="#94A3B8" font-family="Courier New, monospace" font-size="16">identity — bash</text>
+  <g font-family="Courier New, monospace" font-size="21">
+    <text x="38" y="94" fill="#22D3EE">developer@github</text><text x="224" y="94" fill="#E5E7EB">:</text><text x="238" y="94" fill="#3B82F6">~</text><text x="255" y="94" fill="#E5E7EB">$ whoami</text>
+    <text x="38" y="142" fill="#94A3B8">Name</text><text x="178" y="142" fill="#64748B">:</text><text x="205" y="142" fill="#E5E7EB">Vishwajitsingh Rajput</text>
+    <text x="38" y="184" fill="#94A3B8">Role</text><text x="178" y="184" fill="#64748B">:</text><text x="205" y="184" fill="#E5E7EB">Computer Engineering Student</text>
+    <text x="38" y="226" fill="#94A3B8">Focus</text><text x="178" y="226" fill="#64748B">:</text><text x="205" y="226" fill="#E5E7EB">Full-Stack Development and Applied AI</text>
+    <text x="38" y="268" fill="#94A3B8">Location</text><text x="178" y="268" fill="#64748B">:</text><text x="205" y="268" fill="#E5E7EB">Pune, Maharashtra, India</text>
+    <text x="38" y="310" fill="#94A3B8">Learning</text><text x="178" y="310" fill="#64748B">:</text><text x="205" y="310" fill="#E5E7EB">DSA, AI, Computer Vision and Geospatial Systems</text>
+    <text x="38" y="352" fill="#94A3B8">Status</text><text x="178" y="352" fill="#64748B">:</text><text x="205" y="352" fill="#E5E7EB">Building useful and ambitious products</text>
+    <rect x="38" y="380" width="12" height="24" fill="#22D3EE"/>
+  </g>
+</svg>

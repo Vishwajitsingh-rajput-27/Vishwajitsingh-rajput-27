@@ -1,0 +1,114 @@
+name: Generate 3D Contribution Calendar
+
+on:
+  schedule:
+    - cron: "43 2 * * 0"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/contribution-3d.yml"
+      - "scripts/prepare-external-svg.js"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contribution-3d-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate and validate 3D calendar payload
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out validation code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Generate GitHub 3D contribution assets
+        uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39 # v0.9.3
+        env:
+          USERNAME: Vishwajitsingh-rajput-27
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install locked validation dependencies
+        run: npm ci
+
+      - name: Prepare accessible light and dark SVG assets
+        run: |
+          node scripts/prepare-external-svg.js \
+            profile-3d-contrib/profile-green-animate.svg \
+            release/contribution-3d-light.svg \
+            "Three-dimensional GitHub contribution calendar" \
+            "Light-mode three-dimensional contribution calendar for Vishwajitsingh Rajput."
+          node scripts/prepare-external-svg.js \
+            profile-3d-contrib/profile-night-green.svg \
+            release/contribution-3d-dark.svg \
+            "Three-dimensional GitHub contribution calendar" \
+            "Dark-mode three-dimensional contribution calendar for Vishwajitsingh Rajput."
+          test -s release/contribution-3d-light.svg
+          test -s release/contribution-3d-dark.svg
+
+      - name: Validate generated SVG payload
+        run: npm run validate-svg -- --directory release
+
+      - name: Upload validated 3D release payload
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: contribution-3d
+          path: release/
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish validated 3D contribution assets
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository history
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Download validated 3D release payload
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: contribution-3d
+          path: release
+
+      - name: Replace assets atomically and commit only changes
+        run: |
+          set -euo pipefail
+          test -s release/contribution-3d-light.svg
+          test -s release/contribution-3d-dark.svg
+          cp release/contribution-3d-light.svg assets/generated/contribution-3d-light.svg.tmp
+          cp release/contribution-3d-dark.svg assets/generated/contribution-3d-dark.svg.tmp
+          mv assets/generated/contribution-3d-light.svg.tmp assets/generated/contribution-3d-light.svg
+          mv assets/generated/contribution-3d-dark.svg.tmp assets/generated/contribution-3d-dark.svg
+
+          if git diff --quiet -- assets/generated/contribution-3d-light.svg assets/generated/contribution-3d-dark.svg; then
+            echo "3D contribution assets are unchanged; no commit is required."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/generated/contribution-3d-light.svg assets/generated/contribution-3d-dark.svg
+          git commit -m "chore(profile): refresh 3D contribution calendar"
+          git pull --rebase origin main
+          git push origin HEAD:main

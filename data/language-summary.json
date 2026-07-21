@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-07-21T15:52:24.763Z",
+  "source": "Verified language lists from public, non-fork, non-archived repositories; used only when byte totals are temporarily unavailable",
+  "method": "verified-repository-language-occurrence-fallback",
+  "stale": true,
+  "totalBytes": null,
+  "totalRepositoryLanguageOccurrences": 9,
+  "languages": [
+    {
+      "name": "TypeScript",
+      "bytes": null,
+      "repositoryOccurrences": 4,
+      "rawPercentage": 44.44,
+      "displayPercentage": 44.44,
+      "displayAdjusted": false
+    },
+    {
+      "name": "JavaScript",
+      "bytes": null,
+      "repositoryOccurrences": 2,
+      "rawPercentage": 22.22,
+      "displayPercentage": 22.22,
+      "displayAdjusted": false
+    },
+    {
+      "name": "Python",
+      "bytes": null,
+      "repositoryOccurrences": 2,
+      "rawPercentage": 22.22,
+      "displayPercentage": 22.22,
+      "displayAdjusted": false
+    },
+    {
+      "name": "Kotlin",
+      "bytes": null,
+      "repositoryOccurrences": 1,
+      "rawPercentage": 11.11,
+      "displayPercentage": 11.11,
+      "displayAdjusted": false
+    }
+  ],
+  "excludedLanguages": [
+    "Jupyter Notebook"
+  ],
+  "displayAdjustments": {
+    "HTML": 0.45,
+    "CSS": 0.55
+  },
+  "disclaimer": "Language statistics reflect the composition of public repositories and do not represent absolute proficiency."
+}
