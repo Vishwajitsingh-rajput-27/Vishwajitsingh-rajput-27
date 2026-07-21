@@ -72,7 +72,12 @@ function scoreRepository(repo, readmeSize) {
 }
 
 (async () => {
-  const repos = await fetchRepos(profile.username);
+  let repos = [];
+  try {
+    repos = await fetchRepos(profile.username);
+  } catch {
+    repos = [];
+  }
   const excluded = new Set(projectConfig.excludedRepositories.map((r) => r.toLowerCase()));
 
   const candidates = repos.filter((repo) => {

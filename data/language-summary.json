@@ -1,5 +1,11 @@
 {
   "disclaimer": "Language statistics reflect the composition of public repositories and do not represent absolute proficiency.",
+  "sources": {
+    "includeForks": false,
+    "includeArchived": false,
+    "includePrivate": false
+  },
+  "repositoryCount": 0,
   "languages": [],
-  "lastUpdated": ""
+  "lastUpdated": "2026-07-21T14:06:06.894Z"
 }

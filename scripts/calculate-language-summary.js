@@ -17,12 +17,22 @@ async function fetchJson(url) {
 }
 
 (async () => {
-  const repos = await fetchJson(`https://api.github.com/users/${profile.username}/repos?per_page=100&sort=updated`);
+  let repos = [];
+  try {
+    repos = await fetchJson(`https://api.github.com/users/${profile.username}/repos?per_page=100&sort=updated`);
+  } catch {
+    repos = [];
+  }
   const filtered = repos.filter((repo) => !repo.fork && !repo.archived && !repo.private && repo.size > 0);
 
   const totals = {};
   for (const repo of filtered) {
-    const langs = await fetchJson(repo.languages_url);
+    let langs = {};
+    try {
+      langs = await fetchJson(repo.languages_url);
+    } catch {
+      langs = {};
+    }
     for (const [language, bytes] of Object.entries(langs)) {
       totals[language] = (totals[language] || 0) + bytes;
     }

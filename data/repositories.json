@@ -1,4 +1,17 @@
 {
   "featured": [],
-  "lastUpdated": ""
+  "scoringModel": {
+    "factors": [
+      "recent_activity",
+      "readme_quality",
+      "description_quality",
+      "repository_completeness",
+      "originality",
+      "profile_relevance",
+      "topics",
+      "verified_homepage",
+      "documentation_quality"
+    ]
+  },
+  "lastUpdated": "2026-07-21T14:06:06.714Z"
 }

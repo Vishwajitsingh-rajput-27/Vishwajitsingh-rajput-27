@@ -61,7 +61,7 @@ jobs:
 
       - name: Resolve update mode
         id: mode
-        run: echo "mode=$(node -e "console.log(require('./config/integrations.json').automaticUpdates.mode)")" >> "$GITHUB_OUTPUT"
+        run: echo "mode=$(node -e 'console.log(require(\"./config/integrations.json\").automaticUpdates.mode)')" >> "$GITHUB_OUTPUT"
 
       - name: Commit directly to main
         if: steps.changes.outputs.changed == 'true' && steps.mode.outputs.mode == 'direct-commit'

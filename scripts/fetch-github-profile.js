@@ -36,7 +36,22 @@ async function fetchWithRest(username) {
     user = null;
   }
 
-  if (!user) user = await fetchWithRest(username);
+  if (!user) {
+    try {
+      user = await fetchWithRest(username);
+    } catch {
+      user = {
+        name: profile.fullName,
+        bio: profile.headline,
+        followers: null,
+        following: null,
+        public_repos: null,
+        blog: "",
+        twitter_username: "",
+        email: ""
+      };
+    }
+  }
 
   const verifiedLinks = {
     github: `https://github.com/${username}`,
