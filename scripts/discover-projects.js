@@ -7,8 +7,21 @@ const profile = JSON.parse(fs.readFileSync(path.join(root, "config", "profile.js
 const projectConfig = JSON.parse(fs.readFileSync(path.join(root, "config", "projects.json"), "utf8"));
 const outputPath = path.join(root, "data", "repositories.json");
 
-const ignoredNamePattern = /(test|template|hello-world|practice|sandbox|demo)/i;
-const relevanceKeywords = ["ai", "full-stack", "nextjs", "react", "automation", "computer-vision", "geospatial", "ml"];
+const ignoredNamePattern = /(test|template|hello-world|practice|sandbox|demo|sample|assignment)/i;
+const relevanceKeywords = [
+  "ai",
+  "full-stack",
+  "fullstack",
+  "next",
+  "react",
+  "automation",
+  "computer vision",
+  "geospatial",
+  "satellite",
+  "resume",
+  "study",
+  "developer"
+];
 
 function runGhApi(endpoint) {
   const result = spawnSync("gh", ["api", endpoint], { encoding: "utf8" });
@@ -16,22 +29,24 @@ function runGhApi(endpoint) {
   return null;
 }
 
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": "profile-readme-bot",
+      ...(process.env.GITHUB_TOKEN ? { Authorization: "Bearer " + process.env.GITHUB_TOKEN } : {})
+    }
+  });
+  if (!res.ok) throw new Error(`Request failed: ${res.status} ${url}`);
+  return res.json();
+}
+
 async function fetchRepos(username) {
   const repos = [];
   let page = 1;
   while (true) {
-    const ghResponse = runGhApi(`users/${username}/repos?per_page=100&page=${page}&sort=updated`);
-    let chunk = ghResponse;
-    if (!chunk) {
-      const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&page=${page}&sort=updated`, {
-        headers: {
-          "User-Agent": "profile-readme-bot",
-          ...(process.env.GITHUB_TOKEN ? { Authorization: "Bearer " + process.env.GITHUB_TOKEN } : {})
-        }
-      });
-      if (!res.ok) throw new Error(`Repo fetch failed at page ${page}: ${res.status}`);
-      chunk = await res.json();
-    }
+    const endpoint = `users/${username}/repos?per_page=100&page=${page}&sort=updated`;
+    const ghResponse = runGhApi(endpoint);
+    const chunk = ghResponse || (await fetchJson(`https://api.github.com/${endpoint}`));
     if (!Array.isArray(chunk) || chunk.length === 0) break;
     repos.push(...chunk);
     if (chunk.length < 100) break;
@@ -40,98 +55,137 @@ async function fetchRepos(username) {
   return repos;
 }
 
-async function fetchReadmeLength(owner, repo) {
-  const endpoint = `repos/${owner}/${repo}/readme`;
-  const ghResult = runGhApi(endpoint);
-  let content = ghResult;
-  if (!content) {
-    const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/readme`, {
-      headers: {
-        Accept: "application/vnd.github+json",
-        "User-Agent": "profile-readme-bot",
-        ...(process.env.GITHUB_TOKEN ? { Authorization: "Bearer " + process.env.GITHUB_TOKEN } : {})
-      }
-    });
-    if (res.ok) content = await res.json();
+async function fetchLanguages(repo) {
+  try {
+    const languageMap = await fetchJson(repo.languages_url);
+    return Object.entries(languageMap)
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 3)
+      .map(([name]) => name);
+  } catch {
+    return repo.language ? [repo.language] : [];
   }
-  return content?.size || 0;
 }
 
-function scoreRepository(repo, readmeSize) {
-  const now = new Date();
-  const updated = new Date(repo.updated_at);
-  const days = Math.max(1, Math.floor((now - updated) / (1000 * 60 * 60 * 24)));
-  const activityScore = Math.max(0, 30 - Math.min(30, Math.floor(days / 6)));
-  const readmeScore = Math.min(20, Math.floor(readmeSize / 250));
-  const descriptionScore = repo.description ? Math.min(12, Math.floor(repo.description.length / 20)) : 0;
-  const completenessScore = (repo.homepage ? 4 : 0) + (repo.license ? 4 : 0) + ((repo.topics || []).length > 0 ? 4 : 0);
-  const originalityScore = repo.fork ? 0 : 12;
-  const relevanceScore = (repo.topics || []).reduce((acc, topic) => acc + (relevanceKeywords.includes(topic.toLowerCase()) ? 3 : 0), 0);
-  const popularitySignal = Math.min(8, (repo.stargazers_count || 0) + (repo.forks_count || 0));
-  return activityScore + readmeScore + descriptionScore + completenessScore + originalityScore + relevanceScore + popularitySignal;
+function scoreRepository(repo) {
+  const description = (repo.description || "").toLowerCase();
+  const topics = Array.isArray(repo.topics) ? repo.topics.map((topic) => topic.toLowerCase()) : [];
+  const language = (repo.language || "").toLowerCase();
+
+  let relevance = 0;
+  for (const keyword of relevanceKeywords) {
+    if (description.includes(keyword) || topics.some((topic) => topic.includes(keyword)) || language.includes(keyword)) {
+      relevance += 3;
+    }
+  }
+
+  const completeness = (repo.homepage ? 3 : 0) + (repo.description ? 3 : 0) + (topics.length > 0 ? 2 : 0);
+  const quality = Math.min(8, Math.floor((repo.size || 0) / 150)) + Math.min(8, (repo.stargazers_count || 0) + (repo.forks_count || 0));
+
+  return relevance + completeness + quality;
+}
+
+function readExistingData() {
+  if (!fs.existsSync(outputPath)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  } catch {
+    return null;
+  }
 }
 
 (async () => {
-  let repos = [];
+  const existing = readExistingData();
+  const excluded = new Set((projectConfig.excludedRepositories || []).map((name) => name.toLowerCase()));
+  excluded.add(profile.username.toLowerCase());
+
+  let repos;
   try {
     repos = await fetchRepos(profile.username);
-  } catch {
-    repos = [];
+  } catch (error) {
+    if (existing) {
+      const fallback = {
+        ...existing,
+        syncStatus: {
+          success: false,
+          reason: "GitHub API unavailable; preserved previous repository snapshot"
+        }
+      };
+      fs.writeFileSync(outputPath, `${JSON.stringify(fallback, null, 2)}\n`);
+      console.log("GitHub API unavailable. Preserved previous repositories.json");
+      process.exit(0);
+    }
+    throw error;
   }
-  const excluded = new Set(projectConfig.excludedRepositories.map((r) => r.toLowerCase()));
 
-  const candidates = repos.filter((repo) => {
-    if (repo.private || repo.fork || repo.archived) return false;
-    if (repo.size === 0) return false;
-    if (excluded.has(repo.name.toLowerCase())) return false;
-    if (ignoredNamePattern.test(repo.name)) return false;
-    return true;
-  });
+  const candidates = repos
+    .filter((repo) => {
+      if (repo.private || repo.fork || repo.archived) return false;
+      if ((repo.size || 0) < 50) return false;
+      if (excluded.has(repo.name.toLowerCase())) return false;
+      if (ignoredNamePattern.test(repo.name)) return false;
+      return true;
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   const enriched = [];
   for (const repo of candidates) {
-    const readmeSize = await fetchReadmeLength(repo.owner.login, repo.name);
-    const score = scoreRepository(repo, readmeSize);
-    enriched.push({ repo, readmeSize, score });
+    const languages = await fetchLanguages(repo);
+    const score = scoreRepository(repo);
+    enriched.push({ repo, languages, score });
   }
 
-  const pinned = projectConfig.pinnedRepositories.map((name) => name.toLowerCase());
-  const pinnedRepos = enriched.filter(({ repo }) => pinned.includes(repo.name.toLowerCase()));
-  const others = enriched.filter(({ repo }) => !pinned.includes(repo.name.toLowerCase()));
+  const pinned = (projectConfig.pinnedRepositories || []).map((name) => name.toLowerCase());
+  const sorted = enriched.sort((a, b) => {
+    const aPinned = pinned.includes(a.repo.name.toLowerCase()) ? 1 : 0;
+    const bPinned = pinned.includes(b.repo.name.toLowerCase()) ? 1 : 0;
+    if (aPinned !== bPinned) return bPinned - aPinned;
+    if (a.score !== b.score) return b.score - a.score;
+    return new Date(b.repo.updated_at).getTime() - new Date(a.repo.updated_at).getTime();
+  });
 
-  const sorted = [...pinnedRepos.sort((a, b) => b.score - a.score), ...others.sort((a, b) => b.score - a.score)]
-    .slice(0, Math.max(1, projectConfig.maximumFeaturedProjects || 4));
+  const featured = sorted
+    .slice(0, Math.max(1, projectConfig.maximumFeaturedProjects || 4))
+    .map(({ repo, languages, score }) => ({
+      name: repo.name,
+      url: repo.html_url,
+      description: repo.description || "",
+      languages,
+      stars: repo.stargazers_count || 0,
+      forks: repo.forks_count || 0,
+      homepage: repo.homepage || "",
+      archived: Boolean(repo.archived),
+      score,
+      updatedAt: repo.updated_at
+    }));
 
-  const featured = sorted.map(({ repo, score, readmeSize }) => ({
+  const eligible = sorted.map(({ repo, languages, score }) => ({
     name: repo.name,
     url: repo.html_url,
     description: repo.description || "",
-    languages: repo.language ? [repo.language] : [],
-    stars: repo.stargazers_count || 0,
-    forks: repo.forks_count || 0,
-    updatedAt: repo.updated_at,
-    homepage: repo.homepage || "",
-    archived: !!repo.archived,
+    languages,
     score,
-    readmeSize
+    archived: Boolean(repo.archived),
+    fork: Boolean(repo.fork),
+    size: repo.size || 0,
+    homepage: repo.homepage || "",
+    updatedAt: repo.updated_at
   }));
 
   const payload = {
     featured,
-    scoringModel: {
-      factors: [
-        "recent_activity",
-        "readme_quality",
-        "description_quality",
-        "repository_completeness",
-        "originality",
-        "profile_relevance",
-        "topics",
-        "verified_homepage",
-        "documentation_quality"
-      ]
+    eligible,
+    filters: {
+      includeForks: false,
+      includeArchived: false,
+      includePrivate: false,
+      minimumRepositorySize: 50,
+      excludedRepositories: [...excluded].sort()
     },
-    lastUpdated: new Date().toISOString()
+    syncStatus: {
+      success: true,
+      reason: "Live repository metadata refreshed from GitHub"
+    }
   };
 
   fs.writeFileSync(outputPath, `${JSON.stringify(payload, null, 2)}\n`);

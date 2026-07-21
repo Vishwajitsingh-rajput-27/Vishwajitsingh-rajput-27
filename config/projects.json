@@ -1,7 +1,14 @@
 {
   "autoDiscovery": true,
   "maximumFeaturedProjects": 4,
-  "excludedRepositories": [],
-  "pinnedRepositories": [],
+  "excludedRepositories": [
+    "Vishwajitsingh-rajput-27"
+  ],
+  "pinnedRepositories": [
+    "notenexus",
+    "Resume_Forge",
+    "clearSKY_AI",
+    "route-resilience-ai"
+  ],
   "manualProjects": []
 }

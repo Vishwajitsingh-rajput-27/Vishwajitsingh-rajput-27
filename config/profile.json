@@ -11,45 +11,46 @@
     "affiliation": "Savitribai Phule Pune University",
     "year": "Second-year engineering student"
   },
-  "about": "I am a second-year Computer Engineering student at Indira College of Engineering and Management, affiliated with Savitribai Phule Pune University. My current focus includes full-stack development, applied artificial intelligence, computer vision, automation, and geospatial technology. I enjoy converting complex ideas into structured and practical products with strong interfaces, reliable workflows, and clear documentation. Alongside project development, I am strengthening my problem-solving skills through Data Structures and Algorithms using Striver\u2019s roadmap.",
+  "about": "I am a second-year Computer Engineering student at Indira College of Engineering and Management, affiliated with Savitribai Phule Pune University. My current focus includes full-stack development, applied artificial intelligence, computer vision, automation, and geospatial technology. I enjoy converting complex ideas into structured and practical products with strong interfaces, reliable workflows, and clear documentation. Alongside project development, I am strengthening my problem-solving skills through Data Structures and Algorithms using Striver’s roadmap.",
   "currentProjects": [
     {
       "name": "NoteNexus AI",
       "problem": "Students often struggle to organize notes, PDFs, assignments, and revision resources in one intelligent system.",
       "solution": "An intelligent study platform for content organization, summaries, quizzes, flashcards, question answering, and personalized revision plans.",
       "technologies": [
-        "Full-Stack",
-        "AI"
+        "TypeScript",
+        "Next.js",
+        "Generative AI"
       ],
       "status": "In Development",
-      "repository": "",
-      "demo": ""
+      "repository": "https://github.com/Vishwajitsingh-rajput-27/notenexus",
+      "demo": "https://notenexus-azure.vercel.app"
     },
     {
       "name": "ResumeAI",
       "problem": "Students and early professionals need structured feedback to improve resumes and identify critical skill gaps.",
       "solution": "An AI-powered resume analysis and career optimization platform for stronger resume quality and targeted preparation.",
       "technologies": [
-        "AI",
-        "Automation",
-        "Career Tools"
+        "TypeScript",
+        "Next.js",
+        "Generative AI"
       ],
       "status": "In Development",
-      "repository": "",
-      "demo": ""
+      "repository": "https://github.com/Vishwajitsingh-rajput-27/Resume_Forge",
+      "demo": "https://resume-forge-six-gamma.vercel.app"
     },
     {
       "name": "Generative AI Cloud Removal for Satellite Imagery",
       "problem": "Cloud obstruction limits reliable visual interpretation in earth observation workflows.",
       "solution": "A multimodal reconstruction approach using optical imagery, SAR data, elevation data, and temporal references.",
       "technologies": [
-        "Generative AI",
+        "Python",
         "Computer Vision",
         "Geospatial"
       ],
       "status": "Research Project",
-      "repository": "",
-      "demo": ""
+      "repository": "https://github.com/Vishwajitsingh-rajput-27/clearSKY_AI",
+      "demo": "https://clear-sky-ai-web.vercel.app"
     }
   ],
   "currentFocus": [
@@ -60,7 +61,7 @@
     "Participating in hackathons and open-source development"
   ],
   "learningFocus": [
-    "Data Structures and Algorithms using Striver\u2019s roadmap",
+    "Data Structures and Algorithms using Striver’s roadmap",
     "Advanced React and Next.js",
     "Backend engineering",
     "Artificial intelligence and machine learning",

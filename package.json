@@ -9,13 +9,22 @@
     "discover:projects": "node scripts/discover-projects.js",
     "languages:summary": "node scripts/calculate-language-summary.js",
     "generate": "node scripts/generate-readme.js",
-    "validate": "npm run validate:config && npm run validate:links && npm run validate:workflows && npm run validate:svg",
+    "detect-changes": "node scripts/detect-changes.js",
+    "validate": "npm run validate:config && npm run validate:links && npm run validate:workflows && npm run validate:svg && npm run validate:readme",
     "validate:config": "node scripts/validate-config.js",
     "validate:links": "node scripts/validate-links.js",
     "validate:workflows": "node scripts/validate-workflows.js",
     "validate:svg": "node scripts/validate-svg.js",
+    "validate:readme": "node scripts/validate-readme.js",
     "update:profile": "npm run fetch:profile && npm run discover:projects && npm run languages:summary && npm run generate",
-    "test": "npm run validate && npm run generate"
+    "test": "npm run validate && npm run generate",
+    "fetch-profile": "npm run fetch:profile",
+    "discover": "npm run discover:projects",
+    "languages": "npm run languages:summary",
+    "check-links": "npm run validate:links",
+    "validate-workflows": "npm run validate:workflows",
+    "validate-svg": "npm run validate:svg",
+    "build": "npm run validate && npm run generate"
   },
   "engines": {
     "node": ">=20"

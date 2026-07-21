@@ -16,14 +16,39 @@ async function fetchJson(url) {
   return res.json();
 }
 
+function readExisting() {
+  if (!fs.existsSync(outputPath)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
 (async () => {
+  const existing = readExisting();
   let repos = [];
+
   try {
     repos = await fetchJson(`https://api.github.com/users/${profile.username}/repos?per_page=100&sort=updated`);
   } catch {
-    repos = [];
+    if (existing) {
+      const fallback = {
+        ...existing,
+        syncStatus: {
+          success: false,
+          reason: "GitHub API unavailable; preserved previous language summary"
+        }
+      };
+      fs.writeFileSync(outputPath, `${JSON.stringify(fallback, null, 2)}\n`);
+      console.log(`Preserved ${path.relative(root, outputPath)}`);
+      return;
+    }
   }
-  const filtered = repos.filter((repo) => !repo.fork && !repo.archived && !repo.private && repo.size > 0);
+
+  const filtered = repos
+    .filter((repo) => !repo.fork && !repo.archived && !repo.private && repo.size > 0)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   const totals = {};
   for (const repo of filtered) {
@@ -39,7 +64,8 @@ async function fetchJson(url) {
   }
 
   const generatedBiasLanguages = new Set(["HTML", "CSS", "SCSS", "Less", "Smarty"]);
-  const totalBytes = Object.values(totals).reduce((a, b) => a + b, 0) || 1;
+  const totalBytes = Object.values(totals).reduce((acc, value) => acc + value, 0) || 1;
+
   const languages = Object.entries(totals)
     .map(([name, bytes]) => ({
       language: name,
@@ -47,7 +73,7 @@ async function fetchJson(url) {
       percentage: Number(((bytes / totalBytes) * 100).toFixed(2)),
       generatedContentBias: generatedBiasLanguages.has(name)
     }))
-    .sort((a, b) => b.bytes - a.bytes)
+    .sort((a, b) => b.bytes - a.bytes || a.language.localeCompare(b.language))
     .slice(0, 12);
 
   const payload = {
@@ -59,7 +85,10 @@ async function fetchJson(url) {
     },
     repositoryCount: filtered.length,
     languages,
-    lastUpdated: new Date().toISOString()
+    syncStatus: {
+      success: true,
+      reason: "Live language composition refreshed from public repositories"
+    }
   };
 
   fs.writeFileSync(outputPath, `${JSON.stringify(payload, null, 2)}\n`);

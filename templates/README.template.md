@@ -3,16 +3,10 @@
 ## Animated Role
 {{ROLE_LINE}}
 
-## Verified Links
-{{SOCIAL_LINKS}}
-
 ## About Me
 {{ABOUT}}
 
-## Terminal Identity Card
-{{TERMINAL_CARD}}
-
-## What I'm Focused On
+## What I’m Focused On
 {{FOCUS}}
 
 ## Current Projects
@@ -21,7 +15,7 @@
 ## Technologies I Use and Explore
 {{TECHNOLOGIES}}
 
-## Featured Public Repositories
+## Featured Repositories
 {{FEATURED_REPOSITORIES}}
 
 ## Learning Focus
@@ -33,11 +27,12 @@
 ## Contribution Activity
 {{CONTRIBUTION_ACTIVITY}}
 
-## 3D Contribution Calendar
-{{THREE_D}}
-
 ## Collaboration
 {{COLLABORATION}}
+
+<!-- PROFILE-MANUAL-NOTES:START -->
+<!-- Add manually curated collaboration preferences or contact context here. -->
+<!-- PROFILE-MANUAL-NOTES:END -->
 
 ## Professional Footer
 {{FOOTER}}

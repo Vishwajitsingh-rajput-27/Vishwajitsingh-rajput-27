@@ -26,8 +26,18 @@ async function fetchWithRest(username) {
   return response.json();
 }
 
+function readExisting() {
+  if (!fs.existsSync(outputPath)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
 (async () => {
   const username = profile.username;
+  const existing = readExisting();
   let user = null;
 
   try {
@@ -40,36 +50,54 @@ async function fetchWithRest(username) {
     try {
       user = await fetchWithRest(username);
     } catch {
-      user = {
-        name: profile.fullName,
-        bio: profile.headline,
-        followers: null,
-        following: null,
-        public_repos: null,
-        blog: "",
-        twitter_username: "",
-        email: ""
-      };
+      user = null;
     }
   }
 
+  if (!user && existing) {
+    const fallback = {
+      ...existing,
+      syncStatus: {
+        success: false,
+        reason: "GitHub API unavailable; preserved previous profile snapshot"
+      }
+    };
+    fs.writeFileSync(outputPath, `${JSON.stringify(fallback, null, 2)}\n`);
+    console.log(`Preserved ${path.relative(root, outputPath)}`);
+    return;
+  }
+
+  const source = user || {
+    name: profile.fullName,
+    bio: profile.headline,
+    followers: null,
+    following: null,
+    public_repos: null,
+    blog: "",
+    twitter_username: "",
+    email: ""
+  };
+
   const verifiedLinks = {
     github: `https://github.com/${username}`,
-    portfolio: isUrl(user.blog) ? user.blog : "",
-    x: user.twitter_username ? `https://x.com/${user.twitter_username}` : ""
+    portfolio: isUrl(source.blog) ? source.blog : "",
+    x: source.twitter_username ? `https://x.com/${source.twitter_username}` : ""
   };
 
   const payload = {
     username,
     profileUrl: `https://github.com/${username}`,
-    profileName: user.name || "",
-    bio: user.bio || "",
-    followers: typeof user.followers === "number" ? user.followers : null,
-    following: typeof user.following === "number" ? user.following : null,
-    publicRepos: typeof user.public_repos === "number" ? user.public_repos : null,
+    profileName: source.name || "",
+    bio: source.bio || "",
+    followers: typeof source.followers === "number" ? source.followers : null,
+    following: typeof source.following === "number" ? source.following : null,
+    publicRepos: typeof source.public_repos === "number" ? source.public_repos : null,
     verifiedLinks,
-    publicEmail: user.email || "",
-    lastUpdated: new Date().toISOString()
+    publicEmail: source.email || "",
+    syncStatus: {
+      success: Boolean(user),
+      reason: user ? "Live profile metadata refreshed from GitHub" : "Live profile data unavailable; using configured defaults"
+    }
   };
 
   fs.writeFileSync(outputPath, `${JSON.stringify(payload, null, 2)}\n`);

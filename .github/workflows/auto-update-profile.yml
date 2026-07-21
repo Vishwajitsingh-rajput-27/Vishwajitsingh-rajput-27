@@ -42,26 +42,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run validations
-        run: npm run validate
-
-      - name: Refresh profile data
+      - name: Refresh profile data and regenerate README
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run update:profile
 
-      - name: Detect repository changes
+      - name: Validate generated profile artifacts
+        run: npm run validate
+
+      - name: Detect meaningful repository changes
         id: changes
-        run: |
-          if git diff --quiet -- README.md data/ config/; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
+        run: npm run detect-changes -- README.md data/ config/
 
       - name: Resolve update mode
         id: mode
-        run: echo "mode=$(node -e 'console.log(require(\"./config/integrations.json\").automaticUpdates.mode)')" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "mode=$(node -e 'console.log(require(\"./config/integrations.json\").automaticUpdates.mode)')" >> "$GITHUB_OUTPUT"
 
       - name: Commit directly to main
         if: steps.changes.outputs.changed == 'true' && steps.mode.outputs.mode == 'direct-commit'
