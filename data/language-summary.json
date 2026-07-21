@@ -5,7 +5,29 @@
     "includeArchived": false,
     "includePrivate": false
   },
-  "repositoryCount": 0,
-  "languages": [],
-  "lastUpdated": "2026-07-21T14:06:06.894Z"
+  "repositoryCount": 7,
+  "languages": [
+    {
+      "language": "TypeScript",
+      "bytes": 4,
+      "percentage": 57.14,
+      "generatedContentBias": false
+    },
+    {
+      "language": "Python",
+      "bytes": 2,
+      "percentage": 28.57,
+      "generatedContentBias": false
+    },
+    {
+      "language": "Kotlin",
+      "bytes": 1,
+      "percentage": 14.29,
+      "generatedContentBias": false
+    }
+  ],
+  "syncStatus": {
+    "success": true,
+    "reason": "Language summary curated from current public repository metadata"
+  }
 }

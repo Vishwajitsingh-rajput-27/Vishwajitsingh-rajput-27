@@ -1,17 +1,173 @@
 {
-  "featured": [],
-  "scoringModel": {
-    "factors": [
-      "recent_activity",
-      "readme_quality",
-      "description_quality",
-      "repository_completeness",
-      "originality",
-      "profile_relevance",
-      "topics",
-      "verified_homepage",
-      "documentation_quality"
+  "featured": [
+    {
+      "name": "notenexus",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/notenexus",
+      "description": "NoteNexus is a unified AI study platform that ingests PDFs, YouTube lectures, voice recordings, images, and WhatsApp messages into one searchable knowledge base. Built with RAG-powered chat, flashcard generation, mind maps, exam prediction, AI tutoring, collaborative study rooms, streaks, XP, and a WhatsApp bot \u2014 study smarter, anywhere.",
+      "languages": [
+        "TypeScript"
+      ],
+      "stars": 2,
+      "forks": 0,
+      "homepage": "https://notenexus-azure.vercel.app",
+      "archived": false,
+      "score": 0,
+      "updatedAt": "2026-07-20T05:07:28Z"
+    },
+    {
+      "name": "Resume_Forge",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/Resume_Forge",
+      "description": "The all-in-one AI career platform that builds ATS-optimized resumes, generates tailored cover letters, scores your resume across 7 dimensions, matches you to job descriptions, preps you for interviews, and publishes your portfolio \u2014 all powered by free AI (Groq + Gemini), zero paid APIs.",
+      "languages": [
+        "TypeScript"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "homepage": "https://resume-forge-six-gamma.vercel.app",
+      "archived": false,
+      "score": 0,
+      "updatedAt": "2026-07-19T05:39:09Z"
+    },
+    {
+      "name": "clearSKY_AI",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/clearSKY_AI",
+      "description": "ClearSky AI baseline deployment for LISS-IV cloud removal and reconstruction.",
+      "languages": [
+        "Python"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "homepage": "https://clear-sky-ai-web.vercel.app",
+      "archived": false,
+      "score": 0,
+      "updatedAt": "2026-06-25T05:55:43Z"
+    },
+    {
+      "name": "route-resilience-ai",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/route-resilience-ai",
+      "description": "Occlusion-aware road graph intelligence for urban disaster mobility.",
+      "languages": [
+        "Python"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "homepage": "",
+      "archived": false,
+      "score": 0,
+      "updatedAt": "2026-06-27T13:27:27Z"
+    }
+  ],
+  "eligible": [
+    {
+      "name": "clearSKY_AI",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/clearSKY_AI",
+      "description": "ClearSky AI baseline deployment for LISS-IV cloud removal and reconstruction.",
+      "languages": [
+        "Python"
+      ],
+      "score": 0,
+      "archived": false,
+      "fork": false,
+      "size": 289,
+      "homepage": "https://clear-sky-ai-web.vercel.app",
+      "updatedAt": "2026-06-25T05:55:43Z"
+    },
+    {
+      "name": "Ecoloop",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/Ecoloop",
+      "description": "A production-ready full-stack e-waste marketplace where users can buy and sell refurbished electronics, with an in-app wallet, UPI/card payments, and Amazon-like e-commerce features.",
+      "languages": [
+        "TypeScript"
+      ],
+      "score": 0,
+      "archived": false,
+      "fork": false,
+      "size": 183,
+      "homepage": "",
+      "updatedAt": "2026-06-14T13:43:21Z"
+    },
+    {
+      "name": "MuseTrace-AI",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/MuseTrace-AI",
+      "description": "",
+      "languages": [
+        "Kotlin"
+      ],
+      "score": 0,
+      "archived": false,
+      "fork": false,
+      "size": 211,
+      "homepage": "",
+      "updatedAt": "2026-07-16T12:18:29Z"
+    },
+    {
+      "name": "notenexus",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/notenexus",
+      "description": "NoteNexus is a unified AI study platform that ingests PDFs, YouTube lectures, voice recordings, images, and WhatsApp messages into one searchable knowledge base. Built with RAG-powered chat, flashcard generation, mind maps, exam prediction, AI tutoring, collaborative study rooms, streaks, XP, and a WhatsApp bot \u2014 study smarter, anywhere.",
+      "languages": [
+        "TypeScript"
+      ],
+      "score": 0,
+      "archived": false,
+      "fork": false,
+      "size": 1682,
+      "homepage": "https://notenexus-azure.vercel.app",
+      "updatedAt": "2026-07-20T05:07:28Z"
+    },
+    {
+      "name": "Payflow",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/Payflow",
+      "description": "Payflow provides a clean interface for peer-to-peer payments, allowing users to:  Send and receive funds Track past transactions View wallet balance Navigate through an intuitive UI This project focuses on frontend design and user experience. It can be integrated with any backend or API to enable real transaction processing.",
+      "languages": [
+        "TypeScript"
+      ],
+      "score": 0,
+      "archived": false,
+      "fork": false,
+      "size": 789,
+      "homepage": "https://vishwajitsingh-rajput-27.github.io/Payflow/",
+      "updatedAt": "2026-02-27T04:43:59Z"
+    },
+    {
+      "name": "Resume_Forge",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/Resume_Forge",
+      "description": "The all-in-one AI career platform that builds ATS-optimized resumes, generates tailored cover letters, scores your resume across 7 dimensions, matches you to job descriptions, preps you for interviews, and publishes your portfolio \u2014 all powered by free AI (Groq + Gemini), zero paid APIs.",
+      "languages": [
+        "TypeScript"
+      ],
+      "score": 0,
+      "archived": false,
+      "fork": false,
+      "size": 3354,
+      "homepage": "https://resume-forge-six-gamma.vercel.app",
+      "updatedAt": "2026-07-19T05:39:09Z"
+    },
+    {
+      "name": "route-resilience-ai",
+      "url": "https://github.com/Vishwajitsingh-rajput-27/route-resilience-ai",
+      "description": "Occlusion-aware road graph intelligence for urban disaster mobility.",
+      "languages": [
+        "Python"
+      ],
+      "score": 0,
+      "archived": false,
+      "fork": false,
+      "size": 260,
+      "homepage": "",
+      "updatedAt": "2026-06-27T13:27:27Z"
+    }
+  ],
+  "filters": {
+    "includeForks": false,
+    "includeArchived": false,
+    "includePrivate": false,
+    "minimumRepositorySize": 50,
+    "excludedRepositories": [
+      "Vishwajitsingh-rajput-27"
     ]
   },
-  "lastUpdated": "2026-07-21T14:06:06.714Z"
+  "syncStatus": {
+    "success": true,
+    "reason": "Repository metadata curated from current public GitHub repositories"
+  }
 }

@@ -1,22 +1,27 @@
+<!-- PROFILE-AUTO:START -->
 ![Professional Hero Banner](./assets/banner.svg)
 
 ## Animated Role
 <p align="left">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&duration=2500&pause=1000&color=22D3EE&width=620&lines=Full-Stack+Developer;AI+%26+Geospatial+Builder;Computer+Engineering+Student" alt="Animated role line" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&duration=2500&pause=1000&color=22D3EE&width=620&lines=Full-Stack+Developer;AI+%26+Geospatial+Builder;Computer+Engineering+Student" alt="Animated roles: Full-Stack Developer, AI and Geospatial Builder, Computer Engineering Student" />
 </p>
 
 **Fallback:** Full-Stack Developer • AI & Geospatial Builder • Computer Engineering Student
 
-## Verified Links
-- [GitHub](https://github.com/Vishwajitsingh-rajput-27)
-
 ## About Me
 I am a second-year Computer Engineering student at Indira College of Engineering and Management, affiliated with Savitribai Phule Pune University. My current focus includes full-stack development, applied artificial intelligence, computer vision, automation, and geospatial technology. I enjoy converting complex ideas into structured and practical products with strong interfaces, reliable workflows, and clear documentation. Alongside project development, I am strengthening my problem-solving skills through Data Structures and Algorithms using Striver’s roadmap.
 
-## Terminal Identity Card
-![Terminal Identity Card](./assets/terminal-card.svg)
+- **Display Name:** Vishwajitsingh Rajput
+- **Configured Name:** Vishwajitsingh Dilipsingh Rajput
+- **Headline:** Computer Engineering Student | Full-Stack Developer | AI & Geospatial Builder
+- **Tagline:** Building intelligent systems, practical developer tools, and ambitious AI-powered products.
+- **Location:** Pune, Maharashtra, India
+- **Education:** B.Tech in Computer Engineering, Indira College of Engineering and Management, Pune (Savitribai Phule Pune University)
+- **Academic Status:** Second-year engineering student
+- **Verified Links:**
+- [GitHub](https://github.com/Vishwajitsingh-rajput-27)
 
-## What I'm Focused On
+## What I’m Focused On
 - Building practical full-stack applications
 - Exploring applied AI and computer vision
 - Developing research-oriented geospatial projects
@@ -25,28 +30,25 @@ I am a second-year Computer Engineering student at Indira College of Engineering
 
 ## Current Projects
 ### NoteNexus AI
-- **Problem:** Students often struggle to organize notes, PDFs, assignments, and revision resources in one intelligent system.
-- **Proposed Solution:** An intelligent study platform for content organization, summaries, quizzes, flashcards, question answering, and personalized revision plans.
-- **Main Technology Categories:** Full-Stack, AI
 - **Status:** In Development
-- **Links:** Public repository/demo link will be added after verification.
+- **Description:** An intelligent study platform for content organization, summaries, quizzes, flashcards, question answering, and personalized revision plans.
+- **Verified Technologies:** TypeScript, Next.js, Generative AI
+- **Verified Links:** [Repository](https://github.com/Vishwajitsingh-rajput-27/notenexus) | [Deployment](https://notenexus-azure.vercel.app)
 
 ### ResumeAI
-- **Problem:** Students and early professionals need structured feedback to improve resumes and identify critical skill gaps.
-- **Proposed Solution:** An AI-powered resume analysis and career optimization platform for stronger resume quality and targeted preparation.
-- **Main Technology Categories:** AI, Automation, Career Tools
 - **Status:** In Development
-- **Links:** Public repository/demo link will be added after verification.
+- **Description:** An AI-powered resume analysis and career optimization platform for stronger resume quality and targeted preparation.
+- **Verified Technologies:** TypeScript, Next.js, Generative AI
+- **Verified Links:** [Repository](https://github.com/Vishwajitsingh-rajput-27/Resume_Forge) | [Deployment](https://resume-forge-six-gamma.vercel.app)
 
 ### Generative AI Cloud Removal for Satellite Imagery
-- **Problem:** Cloud obstruction limits reliable visual interpretation in earth observation workflows.
-- **Proposed Solution:** A multimodal reconstruction approach using optical imagery, SAR data, elevation data, and temporal references.
-- **Main Technology Categories:** Generative AI, Computer Vision, Geospatial
 - **Status:** Research Project
-- **Links:** Public repository/demo link will be added after verification.
+- **Description:** A multimodal reconstruction approach using optical imagery, SAR data, elevation data, and temporal references.
+- **Verified Technologies:** Python, Computer Vision, Geospatial
+- **Verified Links:** [Repository](https://github.com/Vishwajitsingh-rajput-27/clearSKY_AI) | [Deployment](https://clear-sky-ai-web.vercel.app)
 
 ## Technologies I Use and Explore
-### Core Stack
+### Core Technologies
 - C++
 - Python
 - JavaScript
@@ -63,50 +65,18 @@ I am a second-year Computer Engineering student at Indira College of Engineering
 - Generative AI
 - Google Earth Engine
 
-<details>
-<summary>Secondary technologies and active exploration areas</summary>
+### Additional Tools (Learning and Exploration)
+C • HTML • CSS • shadcn/ui • Framer Motion • Zustand • React Hook Form • Zod • TanStack Query • Axios • Recharts • REST APIs • Socket.IO • MongoDB Atlas • Firebase Authentication • OpenAI APIs • Google Gemini • Groq • Ollama • Multimodal AI • Prompt Engineering • Sentinel-1 • Sentinel-2 • Digital Elevation Models • Satellite imagery processing • Remote-sensing workflows • GitHub Actions • Visual Studio Code • Termux • Ubuntu • Playwright • npm • Postman • Vercel • Render • Google Colab • Kaggle
 
-- C
-- HTML
-- CSS
-- shadcn/ui
-- Framer Motion
-- Zustand
-- React Hook Form
-- Zod
-- TanStack Query
-- Axios
-- Recharts
-- REST APIs
-- Socket.IO
-- MongoDB Atlas
-- Firebase Authentication
-- OpenAI APIs
-- Google Gemini
-- Groq
-- Ollama
-- Multimodal AI
-- Prompt Engineering
-- Sentinel-1
-- Sentinel-2
-- Digital Elevation Models
-- Satellite imagery processing
-- Remote-sensing workflows
-- GitHub Actions
-- Visual Studio Code
-- Termux
-- Ubuntu
-- Playwright
-- npm
-- Postman
-- Vercel
-- Render
-- Google Colab
-- Kaggle
-</details>
-
-## Featured Public Repositories
-- Featured repositories will appear automatically after discovery runs against public repositories.
+## Featured Repositories
+- **[notenexus](https://github.com/Vishwajitsingh-rajput-27/notenexus)** — NoteNexus is a unified AI study platform that ingests PDFs, YouTube lectures, voice recordings, images, and WhatsApp messages into one searchable knowledge base. Built with RAG-powered chat, flashcard generation, mind maps, exam prediction, AI tutoring, collaborative study rooms, streaks, XP, and a WhatsApp bot — study smarter, anywhere.  
+  Languages: TypeScript | ⭐ 2 | 🍴 0 | [Verified Homepage](https://notenexus-azure.vercel.app)
+- **[Resume_Forge](https://github.com/Vishwajitsingh-rajput-27/Resume_Forge)** — The all-in-one AI career platform that builds ATS-optimized resumes, generates tailored cover letters, scores your resume across 7 dimensions, matches you to job descriptions, preps you for interviews, and publishes your portfolio — all powered by free AI (Groq + Gemini), zero paid APIs.  
+  Languages: TypeScript | ⭐ 0 | 🍴 0 | [Verified Homepage](https://resume-forge-six-gamma.vercel.app)
+- **[clearSKY_AI](https://github.com/Vishwajitsingh-rajput-27/clearSKY_AI)** — ClearSky AI baseline deployment for LISS-IV cloud removal and reconstruction.  
+  Languages: Python | ⭐ 0 | 🍴 0 | [Verified Homepage](https://clear-sky-ai-web.vercel.app)
+- **[route-resilience-ai](https://github.com/Vishwajitsingh-rajput-27/route-resilience-ai)** — Occlusion-aware road graph intelligence for urban disaster mobility.  
+  Languages: Python | ⭐ 0 | 🍴 0
 
 ## Learning Focus
 - Data Structures and Algorithms using Striver’s roadmap
@@ -129,21 +99,20 @@ Language statistics reflect the composition of public repositories and do not re
 
 | Language | Share |
 | --- | --- |
-| Data | Pending |
-
-Last update: 2026-07-21T14:06:06.894Z
+| TypeScript | 57.14% |
+| Python | 28.57% |
+| Kotlin | 14.29% |
 
 ## Contribution Activity
 A visual representation of my GitHub contribution activity, generated automatically through GitHub Actions.
 
+<p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vishwajitsingh-rajput-27/Vishwajitsingh-rajput-27/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Vishwajitsingh-rajput-27/Vishwajitsingh-rajput-27/output/github-contribution-grid-snake.svg">
   <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/Vishwajitsingh-rajput-27/Vishwajitsingh-rajput-27/output/github-contribution-grid-snake.svg">
 </picture>
-
-## 3D Contribution Calendar
-![3D Contribution Calendar](https://raw.githubusercontent.com/Vishwajitsingh-rajput-27/Vishwajitsingh-rajput-27/output/profile-3d-contrib/profile-night-rainbow.svg)
+</p>
 
 ## Collaboration
 I am open to collaborating on:
@@ -156,7 +125,12 @@ I am open to collaborating on:
 - Geospatial AI
 - Research-oriented student projects
 
-If you would like to collaborate, connect with me through my GitHub profile.
+If you would like to collaborate, connect through my GitHub profile.
+
+<!-- PROFILE-MANUAL-NOTES:START -->
+Open to internship opportunities and collaborative student projects in full-stack, AI, and geospatial domains.
+<!-- PROFILE-MANUAL-NOTES:END -->
 
 ## Professional Footer
 ![Professional Footer](./assets/footer.svg)
+<!-- PROFILE-AUTO:END -->
