@@ -12,6 +12,14 @@ Hi, I'm Vishwajit Rajput 👋<br><br>💻 Computer Engineering Student | AI & Fu
 ![](https://streak-stats.demolab.com/?user=Vishwajitsingh-rajput-27&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.shion.dev/api/top-langs/?username=Vishwajitsingh-rajput-27&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
+## 🐍 Contribution Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vishwajitsingh-rajput-27/Vishwajitsingh-rajput-27/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Vishwajitsingh-rajput-27/Vishwajitsingh-rajput-27/output/github-contribution-grid-snake.svg">
+  <img alt="GitHub contribution grid snake animation" src="https://raw.githubusercontent.com/Vishwajitsingh-rajput-27/Vishwajitsingh-rajput-27/output/github-contribution-grid-snake.svg">
+</picture>
+
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=Vishwajitsingh-rajput-27&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
