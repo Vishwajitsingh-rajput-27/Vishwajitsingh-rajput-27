@@ -1,10 +1,6 @@
 <!-- AUTO-GENERATED:START -->
 <div align="center">
 
-<p align="center">
-  <img src="./pixel_dragon_rage.gif" width="300" alt="Raging Pixel Dragon">
-</p>
-
 ![Vishwajitsingh Rajput — Computer Engineering Student, Full-Stack Developer, AI and Geospatial Builder](./assets/banner.svg)
 
 ![Animated roles: Full-Stack Developer, AI and Geospatial Builder, Computer Engineering Student](./assets/role-line.svg)
